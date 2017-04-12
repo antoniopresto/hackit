@@ -14,29 +14,28 @@ const ErrorMessage = function (object) {};
 
 const H1 = Hackit`
 
-  <Schema name="CPF">
-    {
+  <script>
+    const $Schema_CPF = {
       regEx: /foo/img,
       required: () =>  data.peopleType.match(/PF/i),
       errorMessages: () => {
         // custom validation messages to extend defaults
       }
+    } 
+  </script>
+  
+  
+  <script>
+    $ajax_FOO_URL = '${API_HOST}/$bar
+    
+    $ajax_FOO = (prev, next) => {
+       $ajax_FOO_URL = lalala;
+       return prev[0].bar;
     }
-  </Schema>
+  </script>
   
-  <Ajax name="fooAjax">
-    [   {
-            method: 'get',
-            url: '${API_HOST}/foo/bar/$instanceId',
-            return: body.0.instanceId
-        },
-        
-        [...] return prev  body.bar
-    ]
-  </Ajax>
   
-  s
-  <div class="ui foo bar { valid: $CPF.isValid }">
+  <div namespace="cliente.foo.$barVar" class="ui foo bar { valid: $CPF.isValid }">
     <div hide="!$errors">
        $map($errors, $ErrorMessage)
     </div>
@@ -44,7 +43,7 @@ const H1 = Hackit`
     <h1 hide="!$loading_fooAjax" class="loading-wrapper"> Carregando ... </h1>
     
     <div hide="$loading_fooAjax"> 
-        $map($pessoas, ${Pessoa})
+        $map($ajax_FOO.pessoas, ${Pessoa})
     </div>
     
     <input 
